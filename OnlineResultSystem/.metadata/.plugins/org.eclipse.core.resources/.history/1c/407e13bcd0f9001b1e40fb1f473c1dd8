@@ -1,0 +1,153 @@
+package in.co.rays.ors.util;
+
+import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import in.co.rays.ors.ctl.BaseCtl;
+import in.co.rays.ors.ctl.ORSView;
+import in.co.rays.ors.model.BaseModel;
+import in.co.rays.ors.bean.BaseBean;
+
+
+public class ServletUtility {
+
+	
+	public static void forward(String page, HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		RequestDispatcher rd = request.getRequestDispatcher(page);
+		rd.forward(request, response);
+
+	}
+
+	
+	/*public static void forwardView(String page, HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		request.setAttribute("bodyPage", page);
+		RequestDispatcher rd = request.getRequestDispatcher(ORSView.LAYOUT_VIEW);
+		rd.forward(request, response);
+	}*/
+
+	
+	public static void redirect(String page, HttpServletRequest request, HttpServletResponse response)
+			throws IOException {
+		response.sendRedirect(page);
+	}
+
+	
+	public static void handleException(Exception e, HttpServletRequest request, HttpServletResponse response) throws IOException {
+		request.setAttribute("exception", e);
+		response.sendRedirect(ORSView.ERROR_CTL);
+		
+	}
+	
+	
+
+	
+	
+	public static void setBean(BaseBean bean, HttpServletRequest request) {
+		request.setAttribute("bean", bean);
+	}
+
+	
+	public static void setErrorMessage(String msg) {
+		HttpServletRequest request = null;
+		request.setAttribute(BaseCtl.MSG_ERROR, msg);
+	}
+
+	
+	public static String getErrorMessage(String property, HttpServletRequest request) {
+		String val = (String) request.getAttribute(property);
+
+		if (val == null) {
+			return "";
+		} else {
+			return val;
+		}
+	}
+
+	
+	public static String getErrorMessage(HttpServletRequest request) {
+        String val = (String) request.getAttribute(BaseCtl.MSG_ERROR);
+        if (val == null) {
+            return "";
+        } else {
+            return val;
+        }
+    }
+	
+	
+	public static void setSuccessMessage(String msg, HttpServletRequest request) {
+		request.setAttribute(BaseCtl.MSG_SUCCESS, msg);
+	}
+
+	
+	public static String getSuccessMessage(HttpServletRequest request) {
+		String val = (String) request.getAttribute(BaseCtl.MSG_SUCCESS);
+
+		if (val == null) {
+			return "";
+		} else {
+			return val;
+		}
+
+	}
+
+	
+	public static void setModel(BaseModel model, HttpServletRequest request) {
+		request.setAttribute("model", model);
+	}
+
+	
+	public static BaseModel getModel(HttpServletRequest request) {
+		return (BaseModel) request.getAttribute("model");
+	}
+	
+	
+
+    public static String getParameter(String property,
+            HttpServletRequest request) {
+        String val = (String) request.getParameter(property);
+        if (val == null) {
+            return "";
+        } else {
+            return val;
+        }
+    }
+    
+   
+    public static void setList(List list,HttpServletRequest request){
+    	request.setAttribute("list", list);
+    }
+    
+   
+    public static List getList(HttpServletRequest request){
+    	return (List) request.getAttribute("list"); 
+    }
+    
+    
+    public static void setPageNo(int pageNo, HttpServletRequest request) {
+		request.setAttribute("pageNo", pageNo);
+	}
+    
+    
+    public static int getPageNo(HttpServletRequest request){
+    	return (Integer)request.getAttribute("pageNo");
+    }
+
+   
+    public static void setPageSize(int pageSize,HttpServletRequest request){
+    	request.setAttribute("pageSize",pageSize);
+    	
+    }
+    
+    
+    public static int getPageSize(HttpServletRequest request){
+    	return (Integer) request.getAttribute("pageSize");
+    }
+   
+}

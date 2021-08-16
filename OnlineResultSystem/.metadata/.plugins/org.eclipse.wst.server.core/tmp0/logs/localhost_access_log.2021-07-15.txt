@@ -1,0 +1,15 @@
+127.0.0.1 - - [15/Jul/2021:22:29:51 +0530] "GET / HTTP/1.1" 404 751
+127.0.0.1 - - [15/Jul/2021:22:29:54 +0530] "GET /ORSProject4/ HTTP/1.1" 200 553
+127.0.0.1 - - [15/Jul/2021:22:29:55 +0530] "GET /ORSProject4/img/customLogo.jpg HTTP/1.1" 200 33775
+127.0.0.1 - - [15/Jul/2021:22:30:06 +0530] "GET /ORSProject4/WelcomeCtl HTTP/1.1" 200 1817
+127.0.0.1 - - [15/Jul/2021:22:30:06 +0530] "GET /ORSProject4/css/angular-datepicker.css HTTP/1.1" 200 5392
+127.0.0.1 - - [15/Jul/2021:22:30:06 +0530] "GET /ORSProject4/js/angular.min.js HTTP/1.1" 200 165382
+127.0.0.1 - - [15/Jul/2021:22:30:06 +0530] "GET /ORSProject4/js/angular-locale_en.js HTTP/1.1" 200 2706
+127.0.0.1 - - [15/Jul/2021:22:30:06 +0530] "GET /ORSProject4/js/angular-datepicker.js HTTP/1.1" 200 37154
+127.0.0.1 - - [15/Jul/2021:22:30:06 +0530] "GET /ORSProject4/js/index.js HTTP/1.1" 200 858
+127.0.0.1 - - [15/Jul/2021:22:30:13 +0530] "GET /ORSProject4/LoginCtl HTTP/1.1" 200 3485
+127.0.0.1 - - [15/Jul/2021:22:30:22 +0530] "POST /ORSProject4/LoginCtl HTTP/1.1" 302 -
+127.0.0.1 - - [15/Jul/2021:22:30:23 +0530] "GET /ORSProject4/UserRegistrationCtl HTTP/1.1" 200 5393
+127.0.0.1 - - [15/Jul/2021:22:30:28 +0530] "GET /ORSProject4/LoginCtl HTTP/1.1" 200 3485
+127.0.0.1 - - [15/Jul/2021:22:30:30 +0530] "GET /ORSProject4/ForgetPasswordCtl HTTP/1.1" 200 2684
+127.0.0.1 - - [15/Jul/2021:22:30:34 +0530] "GET /ORSProject4/WelcomeCtl HTTP/1.1" 200 1817
